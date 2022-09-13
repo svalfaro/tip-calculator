@@ -1,0 +1,145 @@
+body {
+  box-sizing: border-box;
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  color: hsl(186, 14%, 43%);
+  min-height: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  /* background-color: dodgerblue; */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+input {
+  text-align: right;
+  padding: 5px;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  outline-style: solid;
+  outline-color: hsl(172, 67%, 45%);
+}
+
+.main-container {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* width: 50%; */
+}
+
+.main-calc {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: 30px;
+}
+
+/* .res {
+  background-color: hsl(189, 41%, 97%);
+  height: 48px;
+  font-size: 20px;
+} */
+
+.int {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  font-size: 1.1rem;
+  height: 20px;
+  width: 285px;
+  border-radius: 4px;
+}
+
+.calc-custom {
+  /* text-align: center; */
+  width: 80px;
+  height: 26px;
+  border-radius: 4px;
+}
+
+.btn-container {
+  width: 320px;
+}
+
+.btn {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  border: solid;
+  border-radius: 4px;
+  padding: 5px 20px;
+  margin: 5px 2px;
+  border: none;
+  font-family: "Space Mono", monospace;
+  font-size: 1.1rem;
+  width: 90px;
+}
+
+.btn:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(0, 0%, 0%);
+  cursor: pointer;
+}
+
+.btn:focus {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(0, 0%, 0%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Strong cyan: hsl(172, 67%, 45%)
+
+### Neutral
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Very light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (form inputs): 24px
+
+### Font
+
+- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+- Weights: 700 */
