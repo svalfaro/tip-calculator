@@ -22,12 +22,13 @@
 
     <div class="main-container">
       <div class="main-calc">
-        <span>Bill</span>
         <div class="res">
+          <div>Bill</div>
           <input class="calc-num int" type="text" inputmode="numeric"></input>
         </div>
-        <span>Select Tip %</span>
+
         <div class="btn-container">
+          <div class="res">Select Tip %</div>
           <button class="btn">5%</button>
           <button class="btn">10%</button>
           <button class="btn">15%</button>
@@ -35,23 +36,36 @@
           <button class="btn">50%</button>
           <input class="calc-custom int" type="text" inputmode="numeric" placeholder="Custom"></input>
         </div>
-        <span>Number of People</span>
-        <input class="calc-people int" type="text" inputmode="numeric"></input>
+        
+        <div>
+          <div>Number of People</div>
+          <input class="calc-people int" type="text" inputmode="numeric"></input>
+        </div>
       </div>
     
       <div class="main-res">
 
-        <div class="wgf1">
-          <span class="main-result1">Tip Amount /person</span>
-          <span class="tip-amount">0.00</span>
+        <div class="box-1">
+          <span class="main-result1">Tip Amount</span>
+          <span class="per-person1">/ person</span>
         </div>
 
-        <div class="wgf2">
-          <span class="main-result2">Total / person Reset</span>
-          <span class="total-amount">0.00</span>
+        <div class="box-tip">
+          <span class="tip-amount">$0.00</span>
         </div>
 
-        <button class="reset">RESET</button>
+        <div class="box-2">
+          <span class="main-result2">Total</span>
+          <span class="per-person2">/ person<span>
+        </div>
+
+        <div class="box-total">
+          <span class="total-amount">$0.00</span>
+        </div>
+
+        <div>
+          <button class="reset">RESET</button>
+        </div>
 
       </div>
     </div>
