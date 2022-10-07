@@ -19,17 +19,21 @@ let perPerson;
 btn.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     percentage = event.target.textContent.replace("%", ""); // 5%, 10% ...
-    tip = (percentage / 100) * calcNum.value;
+    tip = (percentage / 100) * Number(calcNum.value);
+    person = (Number(calcNum.value) + tip).toFixed(2);
 
     perPerson = `$${(
       calcNum.value / calcPeople.value +
       tip / calcPeople.value
     ).toFixed(2)}`;
 
-    if (calcPeople.value === "" || calcPeople.value === 1) {
+    if (calcPeople.value === "") {
       tipAmount.textContent = `$${tip.toFixed(2)}`;
       totalAmount.textContent = `$${tip.toFixed(2)}`;
-    } else if (calcPeople.value > 1) {
+    } else if (Number(calcPeople.value) === 1) {
+      tipAmount.textContent = `$${tip.toFixed(2)}`;
+      totalAmount.textContent = `$${person}`;
+    } else if (Number(calcPeople.value) > 1) {
       tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
       totalAmount.textContent = `${perPerson}`;
     }
