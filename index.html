@@ -24,7 +24,7 @@
       <div class="main-calc">
         <div class="res">
           <div>Bill</div>
-          <input class="calc-num int" type="text" inputmode="numeric"></input>
+          <input class="calc-num int" type="text" inputmode="numeric" />
         </div>
 
         <div class="btn-container">
@@ -34,20 +34,22 @@
           <button class="btn fifteen">15%</button>
           <button class="btn twentyfive">25%</button>
           <button class="btn fifty">50%</button>
-          <input class="calc-custom int" type="text" inputmode="numeric" placeholder="Custom"></input>
+          <input class="calc-custom int" type="text" inputmode="numeric" placeholder="Custom" />
         </div>
         
-        <div>
-          <div>Number of People</div>
-          <input class="calc-people int" type="text" inputmode="numeric"></input>
+        <div class="customNumber">
+          <div class="numOfPeople">Number of People</div>
+          <div class="error">Can't be zero</div>
+          <input class="calc-people int if-error" type="text" inputmode="numeric"></input>
         </div>
+
       </div>
     
       <div class="main-res">
 
         <div class="box-1">
           <span class="main-result1">Tip Amount</span>
-          <span class="per-person1">/ person</span>
+          <div class="per-person1">/ person</div>
         </div>
 
         <div class="box-tip">
@@ -56,7 +58,7 @@
 
         <div class="box-2">
           <span class="main-result2">Total</span>
-          <span class="per-person2">/ person<span>
+          <div class="per-person2">/ person</div>
         </div>
 
         <div class="box-total">
