@@ -13,12 +13,6 @@ body {
   align-items: center;
 }
 
-/* span {
-  background-color: dodgerblue;
-  margin-top: 20px;
-  margin-bottom: 10px;
-} */
-
 input {
   text-align: right;
   padding: 10px;
@@ -30,7 +24,7 @@ input {
 }
 
 input:focus {
-  outline: none;
+  outline: 3px;
   outline-style: solid;
   outline-color: hsl(172, 67%, 45%);
 }
@@ -50,8 +44,8 @@ input:focus {
   border-radius: 25px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 30px;
-  width: 800px;
-  height: 480px;
+  width: 900px;
+  height: 425px;
   gap: 40px;
 }
 
@@ -67,6 +61,11 @@ input:focus {
 }
 
 .res {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 7px;
   width: 100%;
 }
 
@@ -76,7 +75,7 @@ input:focus {
   justify-content: space-evenly;
   align-content: space-evenly;
   flex-wrap: wrap;
-  width: 50%px;
+  width: 50%;
   background-color: hsl(183, 100%, 15%);
   min-height: 380px;
   border-radius: 10px;
@@ -122,7 +121,7 @@ input:focus {
   color: hsl(183, 100%, 15%);
   font-size: 1.1rem;
   height: 20px;
-  width: 400px;
+  width: 410px;
   border-radius: 4px;
 }
 
@@ -172,26 +171,46 @@ input:focus {
 .tip-amount,
 .total-amount {
   font-family: "Space Mono", monospace;
-  font-size: 2.7rem;
+  font-size: 3rem;
   color: hsl(172, 67%, 45%);
 }
 
 .resetBtn {
-  /* background-color: hsl(183, 100%, 15%); */
-  background-color: pink;
-  color: hsl(0, 0%, 100%);
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(0, 0%, 0%);
   border: solid;
   border-radius: 4px;
   border: none;
   font-family: "Space Mono", monospace;
-  width: 270px;
+  width: 370px;
   height: 45px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  align-self: center;
+  justify-self: center;
 }
 
 .resetBtn:hover {
-  background-color: hsl(172, 67%, 45%);
+  background-color: hsl(185, 41%, 84%);
   color: hsl(0, 0%, 0%);
+}
+
+.customNumber {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.error {
+  visibility: hidden;
+  color: hsl(6, 100%, 63%);
+}
+
+.if-error {
+  outline: 3px;
+  outline-style: solid;
+  outline-color: hsl(6, 100%, 63%);
 }
 
 .attribution {
