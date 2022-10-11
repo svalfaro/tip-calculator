@@ -51,6 +51,14 @@ customNum.addEventListener("keypress", (event) => {
   }
 });
 
+calcNum.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    if (Number(calcNum.value === "")) {
+      console.log("cannot be");
+    }
+  }
+});
+
 resetBtn.addEventListener("click", () => {
   calcNum.value = "";
   calcPeople.value = "";
