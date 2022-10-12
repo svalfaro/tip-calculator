@@ -11,10 +11,18 @@ let customNum = document.querySelector(".calc-custom");
 let totalAmount = document.querySelector(".total-amount");
 let clear = document.querySelectorAll(".int");
 let resetBtn = document.querySelector(".resetBtn");
+let hideError = document.querySelector(".hide-error");
 
 let percentage;
 let tip;
 let perPerson;
+
+function isValid() {
+  if (!calcPeople.checkValidity()) {
+    hideError.classList.remove("error");
+    console.log(calcPeople);
+  }
+}
 
 btn.forEach((btn) => {
   btn.addEventListener("click", (event) => {
@@ -51,11 +59,17 @@ customNum.addEventListener("keypress", (event) => {
   }
 });
 
-calcNum.addEventListener("keypress", (event) => {
+calcPeople.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
-    if (Number(calcNum.value === "")) {
-      console.log("cannot be");
+    if ((Number(calcPeople.value) === 0 || (calcPeople.value === "")) {
+      console.log(event.target.checkValidity());
     }
+    percentage = event.target.value;
+    tip = (percentage / 100) * calcNum.value;
+    perPerson = `$${(calcNum.value / calcPeople.value + tip).toFixed(2)}`;
+
+    tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
+    totalAmount.textContent = `${perPerson}`;
   }
 });
 
