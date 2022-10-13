@@ -48,22 +48,26 @@ btn.forEach((btn) => {
   });
 });
 
-customNum.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    percentage = event.target.value;
-    tip = (percentage / 100) * calcNum.value;
-    perPerson = `$${(calcNum.value / calcPeople.value + tip).toFixed(2)}`;
+customNum.addEventListener("change", (event) => {
+  console.log(event.target.checkValidity());
+  // if (event.key === "Enter") {
+  // console.log(isValid);
+  percentage = event.target.value;
+  tip = (percentage / 100) * calcNum.value;
+  perPerson = `$${(calcNum.value / calcPeople.value + tip).toFixed(2)}`;
 
-    tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
-    totalAmount.textContent = `${perPerson}`;
-  }
+  tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
+  totalAmount.textContent = `${perPerson}`;
+  // }
 });
 
 calcPeople.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
-    if ((Number(calcPeople.value) === 0 || (calcPeople.value === "")) {
-      console.log(event.target.checkValidity());
+    if (Number(calcPeople.value) === 0) {
+      hideError.classList.toggle("error");
+      calcPeople.classList.toggle("if-error");
     }
+
     percentage = event.target.value;
     tip = (percentage / 100) * calcNum.value;
     perPerson = `$${(calcNum.value / calcPeople.value + tip).toFixed(2)}`;
