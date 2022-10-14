@@ -13,8 +13,8 @@ let clear = document.querySelectorAll(".int");
 let resetBtn = document.querySelector(".resetBtn");
 let hideError = document.querySelector(".hide-error");
 
-let percentage;
-let tip;
+let percentage = 0;
+let tip = 0;
 let perPerson;
 
 function isValid() {
@@ -35,30 +35,21 @@ btn.forEach((btn) => {
       tip / calcPeople.value
     ).toFixed(2)}`;
 
-    if (calcPeople.value === "") {
-      tipAmount.textContent = `$${tip.toFixed(2)}`;
-      totalAmount.textContent = `$${tip.toFixed(2)}`;
-    } else if (Number(calcPeople.value) === 1) {
-      tipAmount.textContent = `$${tip.toFixed(2)}`;
-      totalAmount.textContent = `$${person}`;
-    } else if (Number(calcPeople.value) > 1) {
-      tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
-      totalAmount.textContent = `${perPerson}`;
-    }
+    tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
+    totalAmount.textContent = `${perPerson}`;
   });
 });
 
-customNum.addEventListener("change", (event) => {
-  console.log(event.target.checkValidity());
-  // if (event.key === "Enter") {
-  // console.log(isValid);
-  percentage = event.target.value;
-  tip = (percentage / 100) * calcNum.value;
-  perPerson = `$${(calcNum.value / calcPeople.value + tip).toFixed(2)}`;
+customNum.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    console.log(event.target.checkValidity());
+    percentage = event.target.value;
+    tip = (percentage / 100) * calcNum.value;
+    perPerson = `$${(calcNum.value / calcPeople.value + tip).toFixed(2)}`;
 
-  tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
-  totalAmount.textContent = `${perPerson}`;
-  // }
+    tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
+    totalAmount.textContent = `${perPerson}`;
+  }
 });
 
 calcPeople.addEventListener("keypress", (event) => {
