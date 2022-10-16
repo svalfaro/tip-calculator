@@ -13,6 +13,14 @@ body {
   align-items: center;
 }
 
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 input {
   text-align: right;
   padding: 10px;
@@ -31,7 +39,6 @@ input:focus {
 
 .app-title {
   display: flex;
-
   font-size: 35px;
 }
 
@@ -171,8 +178,9 @@ input:focus {
 .tip-amount,
 .total-amount {
   font-family: "Space Mono", monospace;
-  font-size: 3rem;
+  font-size: 3.2vw;
   color: hsl(172, 67%, 45%);
+  background-color: pink;
 }
 
 .resetBtn {
@@ -204,6 +212,9 @@ input:focus {
 
 .error {
   visibility: hidden;
+}
+
+.hide-error {
   color: hsl(6, 100%, 63%);
 }
 
