@@ -13,58 +13,97 @@ let clear = document.querySelectorAll(".int");
 let resetBtn = document.querySelector(".resetBtn");
 let hideError = document.querySelector(".hide-error");
 
-let percentage = 0;
+let percentage;
+let percent;
 let tip = 0;
 let perPerson;
 
-function isValid() {
-  if (!calcPeople.checkValidity()) {
-    hideError.classList.remove("error");
-    console.log(calcPeople);
-  }
-}
-
 btn.forEach((btn) => {
   btn.addEventListener("click", (event) => {
-    percentage = event.target.textContent.replace("%", ""); // 5%, 10% ...
-    tip = (percentage / 100) * Number(calcNum.value);
-    person = (Number(calcNum.value) + tip).toFixed(2);
+    if (Number(calcPeople.value) === 0) {
+      hideError.classList.remove("error");
+      calcPeople.classList.add("if-error");
+    } else {
+      hideError.classList.add("error");
+      calcPeople.classList.remove("if-error");
 
-    perPerson = `$${(
-      calcNum.value / calcPeople.value +
-      tip / calcPeople.value
-    ).toFixed(2)}`;
+      percentage = event.target.textContent.replace("%", ""); // 5%, 10% ...
+      tip = (percentage * Number(calcNum.value)) / 100;
+      person = (Number(calcNum.value) + tip).toFixed(2);
 
-    tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
-    totalAmount.textContent = `${perPerson}`;
+      perPerson = `$${Number(
+        calcNum.value / calcPeople.value + tip / calcPeople.value
+      ).toFixed(2)}`;
+
+      tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
+      totalAmount.textContent = `${perPerson}`;
+    }
   });
+});
+
+calcNum.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    if (Number(calcPeople.value) === 0) {
+      hideError.classList.remove("error");
+      calcPeople.classList.add("if-error");
+    } else {
+      hideError.classList.add("error");
+      calcPeople.classList.remove("if-error");
+
+      percent = customNum.value;
+      tip = (percent * Number(calcNum.value)) / 100;
+
+      perPerson = `$${Number(
+        calcNum.value / calcPeople.value + tip / calcPeople.value
+      ).toFixed(2)}`;
+
+      tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
+      totalAmount.textContent = `${perPerson}`;
+    }
+  }
 });
 
 customNum.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
-    console.log(event.target.checkValidity());
-    percentage = event.target.value;
-    tip = (percentage / 100) * calcNum.value;
-    perPerson = `$${(calcNum.value / calcPeople.value + tip).toFixed(2)}`;
+    if (Number(calcPeople.value) === 0) {
+      hideError.classList.remove("error");
+      calcPeople.classList.add("if-error");
+    } else {
+      hideError.classList.add("error");
+      calcPeople.classList.remove("if-error");
 
-    tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
-    totalAmount.textContent = `${perPerson}`;
+      percent = event.target.value;
+      tip = (percent * Number(calcNum.value)) / 100;
+
+      perPerson = `$${Number(
+        calcNum.value / calcPeople.value + tip / calcPeople.value
+      ).toFixed(2)}`;
+
+      tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
+      totalAmount.textContent = `${perPerson}`;
+    }
   }
 });
 
 calcPeople.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     if (Number(calcPeople.value) === 0) {
-      hideError.classList.toggle("error");
-      calcPeople.classList.toggle("if-error");
+      hideError.classList.remove("error");
+      calcPeople.classList.add("if-error");
+    } else {
+      hideError.classList.add("error");
+      calcPeople.classList.remove("if-error");
+
+      percent = customNum.value;
+      tip = (percent * Number(calcNum.value)) / 100;
+
+      perPerson = `$${Number(
+        calcNum.value / calcPeople.value + tip / calcPeople.value
+      ).toFixed(2)}`;
+
+      tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
+      totalAmount.textContent = `${perPerson}`;
     }
-
-    percentage = event.target.value;
-    tip = (percentage / 100) * calcNum.value;
-    perPerson = `$${(calcNum.value / calcPeople.value + tip).toFixed(2)}`;
-
-    tipAmount.textContent = `$${(tip / calcPeople.value).toFixed(2)}`;
-    totalAmount.textContent = `${perPerson}`;
   }
 });
 
