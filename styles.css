@@ -21,6 +21,10 @@ body {
   }
 }
 
+h1 {
+  margin-bottom: 100px;
+}
+
 input {
   text-align: right;
   padding: 10px;
@@ -35,6 +39,20 @@ input:focus {
   outline: 3px;
   outline-style: solid;
   outline-color: hsl(172, 67%, 45%);
+}
+
+.customNumber {
+  position: relative;
+}
+
+.customNumber input {
+  display: block;
+}
+
+.customNumber img {
+  position: absolute;
+  bottom: 10px;
+  left: 13px;
 }
 
 .app-title {
@@ -64,7 +82,6 @@ input:focus {
   width: 50%;
   min-height: 380px;
   border-radius: 10px;
-  /* background-color: pink; */
 }
 
 .res {
@@ -74,6 +91,20 @@ input:focus {
   justify-content: space-between;
   gap: 7px;
   width: 100%;
+}
+
+.res {
+  position: relative;
+}
+
+.res input {
+  display: block;
+}
+
+.res img {
+  position: absolute;
+  bottom: 10px;
+  left: 13px;
 }
 
 .main-res {
@@ -139,8 +170,9 @@ input:focus {
 }
 
 ::placeholder {
-  text-align: center;
+  /* text-align: center; */
   font-size: 24px;
+  color: hsl(184, 14%, 56%);
 }
 
 .btn-container {
@@ -178,9 +210,8 @@ input:focus {
 .tip-amount,
 .total-amount {
   font-family: "Space Mono", monospace;
-  font-size: 3.2vw;
+  font-size: 3.1em;
   color: hsl(172, 67%, 45%);
-  background-color: pink;
 }
 
 .resetBtn {
@@ -195,6 +226,21 @@ input:focus {
   font-size: 1.2rem;
   align-self: center;
   justify-self: center;
+}
+
+.disResetBtn {
+  background-color: hsl(184, 80%, 24%);
+  color: hsl(183, 100%, 15%);
+  border: solid;
+  border-radius: 4px;
+  border: none;
+  font-family: "Space Mono", monospace;
+  width: 370px;
+  height: 45px;
+  font-size: 1.2rem;
+  align-self: center;
+  justify-self: center;
+  pointer-events: none;
 }
 
 .resetBtn:hover {
