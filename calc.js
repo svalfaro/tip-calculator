@@ -33,6 +33,23 @@ function showErr(error, ifError) {
   calcPeople.classList.add("if-error");
 }
 
+function validate(inputID) {
+  const input = inputID;
+  const validityState = input.validity;
+
+  if (validityState.rangeUnderflow) {
+    input.setCustomValidity("We need a higher number!");
+  } else if (validityState.rangeOverflow) {
+    input.setCustomValidity("Thats too high!");
+  } else {
+    input.setCustomValidity("");
+  }
+
+  input.reportValidity();
+  const isValid = input.reportValidity();
+  input.setAttribute("aria-invalid", !isValid);
+}
+
 btn.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     if (Number(calcPeople.value) === 0) {
@@ -55,10 +72,9 @@ btn.forEach((btn) => {
 });
 
 calcNum.addEventListener("input", (event) => {
-  if (!calcNum.checkValidity()) {
-    const isValid = event.target.reportValidity();
-    event.target.setAttribute("aria-invalid", !isValid);
-  } else if (Number(calcPeople.value) === 0) {
+  validate(calcNum);
+
+  if (Number(calcPeople.value) === 0) {
     showErr("error", "if-error");
     btnToggle(btnRes);
   } else {
@@ -78,6 +94,8 @@ calcNum.addEventListener("input", (event) => {
 });
 
 customNum.addEventListener("input", (event) => {
+  validate(customNum);
+
   if (Number(calcPeople.value) === 0) {
     showErr("error", "if-error");
     btnToggle(btnRes);
