@@ -13,6 +13,7 @@ body {
   align-items: center;
 }
 
+
 @layer base {
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
@@ -21,6 +22,7 @@ body {
   }
 }
 
+/*
 h1 {
   margin-bottom: 100px;
 }
@@ -86,8 +88,9 @@ input:focus {
   justify-content: space-between;
   align-content: space-between;
   width: 50%;
-  min-height: 380px;
+  /* min-height: 380px; */
   border-radius: 10px;
+  background-color: pink;
 }
 
 .res {
@@ -283,7 +286,7 @@ input:focus {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
+} */
 
 /* # Front-end Style Guide
 
