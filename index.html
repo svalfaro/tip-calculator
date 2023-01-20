@@ -1,4 +1,4 @@
-h<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -23,30 +23,32 @@ h<!DOCTYPE html>
   </head>
 
   <body>
-    <h1><a href="#"><img src="logo.svg" alt="website logo" /><a></h1>
+    <header>
+      <h1>
+        <a href="#"><img src="logo.svg" alt="website logo" /></a>
+      </h1>
+    </header>
 
     <main>
       <div class="main-container">
-
-      <section>
-          <div class="main-calc">
+        <div class="first-column">
+          <section class="bill-item">
             <h2>Bill</h2>
-              <!-- <img src="icon-dollar.svg" alt="dollar symbol" />  -->
-              <input
-                class="calc-num int"
-                type="number"
-                min="1"
-                max="999999"
-                placeholder="0"
-                step=".01"
-                required
-              />
-          </div>
-        </section>
+            <img src="icon-dollar.svg" alt="dollar symbol"/>
+            <input
+              class="calc-num int"
+              type="number"
+              min="1"
+              max="999999"
+              placeholder="0"
+              step=".01"
+              required
+            />
+          </section>
 
-        <section>
-          <div class="btn-container">
+          <section class="tip-item">
             <h2>Select Tip %</h2>
+            <div class="btn-container">
               <button class="btn five">5%</button>
               <button class="btn ten">10%</button>
               <button class="btn fifteen">15%</button>
@@ -57,16 +59,15 @@ h<!DOCTYPE html>
                 type="number"
                 min="1"
                 max="199"
-                placeholder="Replace"
+                placeholder="Custom"
                 step=".01"
               />
-          </div>
-        </section>
+            </div>
+          </section>
 
-        <section>
-          <div class="customNumber">
+          <section class="numOfPeople">
             <h2>Number of People</h2>
-            <div class="error hide-error">Can't be zero</div>
+            <!-- <div class="error hide-error">Can't be zero</div> -->
             <img src="icon-person.svg" alt="person symbol" />
             <input
               class="calc-people int"
@@ -74,10 +75,10 @@ h<!DOCTYPE html>
               placeholder="0"
               required
             />
-          </div>
-        </section>
+            </div>
+          </section>
 
-        <div class="main-res">
+        <div class="second-column">
           <div class="box-1">
             <div class="main-result1">Tip Amount</div>
             <div class="per-person1">/ person</div>
@@ -101,18 +102,17 @@ h<!DOCTYPE html>
           </div>
         </div>
       </div>
-  </main>
+    </main>
 
-  <footer>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="mailto:sheilavalfaro@gmail.com">Sheila Alfaro</a>
-    </div>
-  </footer>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="mailto:sheilavalfaro@gmail.com">Sheila Alfaro</a>
+      </div>
+    </footer>
 
     <script src="calc.js"></script>
   </body>
 </html>
-
