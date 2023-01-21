@@ -6,9 +6,8 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 15px;
   color: hsl(186, 14%, 43%);
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
-
 
 @layer base {
   input[type="number"]::-webkit-inner-spin-button,
@@ -18,12 +17,111 @@ body {
   }
 }
 
-/*
-h1 {
-  margin-bottom: 100px;
+h2 {
+  font-size: medium;
 }
 
-input {
+.main-container {
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  margin: 0 auto;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  width: 900px;
+  height: 450px;
+  border-radius: 30px;
+}
+
+div.first-column {
+  grid-column-start: 1;
+}
+
+div.second-column {
+  background-color: hsl(183, 100%, 15%);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 2fr;
+  grid-column-start: 2;
+}
+
+/* .error {
+  visibility: hidden;
+}
+
+.hide-error {
+  color: hsl(6, 100%, 63%);
+}
+
+.if-error {
+  outline: 3px;
+  outline-style: solid;
+  outline-color: hsl(6, 100%, 63%);
+} */
+
+/* final results of calculations $0.00*/
+div.tip-amount-num,
+div.total-amount-num {
+  font-size: 45px;
+  color: hsl(172, 67%, 45%);
+}
+
+/* final results tags */
+article.tip-per-person,
+article.total-per-person {
+  display: grid;
+  grid-template-columns: 175px 175px;
+  grid-template-rows: 1fr;
+}
+
+article h2 {
+  color: hsl(0, 0%, 100%);
+}
+
+span.tip-amount-num,
+span.total-amount-num {
+  color: hsl(172, 67%, 45%);
+  font-size: 45px;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  justify-self: end;
+}
+
+span.aside {
+  margin-top: -30px;
+  font-size: 14px;
+}
+
+/* footer disc */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(3, 125px);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 15px;
+}
+
+button.btn {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  border: solid;
+  border-radius: 4px;
+  border: none;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  height: 50px;
+}
+
+input[type="number"] {
+  background-color: hsl(189, 41%, 97%);
+  width: 390px;
   text-align: right;
   padding: 10px;
   font-family: "Space Mono", monospace;
@@ -33,207 +131,23 @@ input {
   cursor: pointer;
 }
 
+input[type="number"].calc-custom {
+  border-style: solid;
+  border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+
 input:focus {
   outline: 3px;
   outline-style: solid;
   outline-color: hsl(172, 67%, 45%);
 }
 
-/* input:invalid {
-  outline: 3px;
-  outline-style: solid;
-  outline-color: hsl(6, 100%, 63%);
-} */
-
-.customNumber {
-  position: relative;
-}
-
-.customNumber input {
-  display: block;
-}
-
-.customNumber img {
-  position: absolute;
-  bottom: 10px;
-  left: 13px;
-}
-
-.app-title {
-  display: flex;
-  font-size: 35px;
-}
-
-.main-container {
-  background-color: hsl(0, 0%, 100%);
-  display: grid;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 25px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 30px;
-  width: 900px;
-  height: 425px;
-  gap: 40px;
-}
-
-.main-calc {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: space-between;
-  width: 50%;
-  /* min-height: 380px; */
-  border-radius: 10px;
-  background-color: pink;
-}
-
-.res {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 7px;
-  width: 100%;
-}
-
-.res {
-  position: relative;
-}
-
-.res input {
-  display: block;
-}
-
-.res img {
-  position: absolute;
-  bottom: 10px;
-  left: 13px;
-}
-
-.main-res {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-content: space-evenly;
-  flex-wrap: wrap;
-  width: 50%;
-  background-color: hsl(183, 100%, 15%);
-  min-height: 380px;
-  border-radius: 10px;
-}
-
-.main-result1,
-.main-result2 {
-  color: white;
-  font-size: 16px;
-}
-
-.per-person1,
-.per-person2 {
-  font-size: 12px;
-}
-
-.box-1 {
-  padding: 10px;
-  width: 32%;
-  padding-left: 20px;
-}
-
-.box-2 {
-  padding: 10px;
-  width: 17%;
-  padding-left: 20px;
-}
-
-.box-tip {
-  text-align: right;
-  width: 52%;
-  padding-right: 25px;
-}
-
-.box-total {
-  text-align: right;
-  width: 67%;
-  padding-right: 25px;
-}
-
-.int {
-  background-color: hsl(189, 41%, 97%);
-  color: hsl(183, 100%, 15%);
-  font-size: 1.1rem;
-  height: 20px;
-  width: 410px;
-  border-radius: 4px;
-}
-
-.calc-custom {
-  width: 100px;
-  height: 30px;
-  border-radius: 4px;
-}
-
-::placeholder {
-  /* text-align: center; */
-  font-size: 24px;
-  color: hsl(184, 14%, 56%);
-}
-
-.btn-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px 15px;
-}
-
-.btn {
-  background-color: hsl(183, 100%, 15%);
-  color: hsl(0, 0%, 100%);
-  border: solid;
-  border-radius: 4px;
-  border: none;
-  font-family: "Space Mono", monospace;
-  font-size: 20px;
-  width: 120px;
-  height: 50px;
-  /* margin: 6px 3px; */
-}
-
-.btn:hover {
-  background-color: hsl(185, 41%, 84%);
-  color: hsl(0, 0%, 0%);
-  cursor: pointer;
-}
-
-.btn:focus {
-  background-color: hsl(172, 67%, 45%);
-  color: hsl(0, 0%, 0%);
-}
-
-.tip-amount,
-.total-amount {
-  font-family: "Space Mono", monospace;
-  font-size: 3.1em;
-  color: hsl(172, 67%, 45%);
-}
-
-.resetBtn {
-  background-color: hsl(172, 67%, 45%);
-  color: hsl(0, 0%, 0%);
-  border: solid;
-  border-radius: 4px;
-  border: none;
-  font-family: "Space Mono", monospace;
-  width: 370px;
-  height: 45px;
-  font-size: 1.2rem;
-  align-self: center;
-  justify-self: center;
-}
-
-.disResetBtn {
+button.disabledResetBtn {
   background-color: hsl(184, 80%, 24%);
   color: hsl(183, 100%, 15%);
   border: solid;
@@ -248,41 +162,23 @@ input:focus {
   pointer-events: none;
 }
 
-.resetBtn:hover {
-  background-color: hsl(185, 41%, 84%);
-  color: hsl(0, 0%, 0%);
+/* the icons within the inputs */
+.bill-item,
+.numOfPeople {
+  position: relative;
 }
 
-.customNumber {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 7px;
+.bill-item input,
+.numOfPeople input {
+  display: block;
 }
 
-.error {
-  visibility: hidden;
+.bill-item img,
+.numOfPeople img {
+  position: absolute;
+  bottom: 17px;
+  left: 13px;
 }
-
-.hide-error {
-  color: hsl(6, 100%, 63%);
-}
-
-.if-error {
-  outline: 3px;
-  outline-style: solid;
-  outline-color: hsl(6, 100%, 63%);
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-} */
 
 /* # Front-end Style Guide
 
