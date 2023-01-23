@@ -27,21 +27,29 @@ h2 {
   margin: 0 auto;
   place-items: center;
   grid-template-columns: 1fr 1fr;
-  width: 900px;
-  height: 450px;
+  width: 980px;
+  height: 500px;
   border-radius: 30px;
 }
 
 div.first-column {
+  display: grid;
+  row-gap: 20px;
+  background-color: hsl(0, 0%, 100%);
   grid-column-start: 1;
+  padding: 0px;
 }
 
 div.second-column {
   background-color: hsl(183, 100%, 15%);
+  border-radius: 15px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 2fr;
   grid-column-start: 2;
+  row-gap: 20px;
+  padding: 35px;
+  height: 350px;
 }
 
 /* .error {
@@ -80,15 +88,16 @@ article h2 {
 span.tip-amount-num,
 span.total-amount-num {
   color: hsl(172, 67%, 45%);
-  font-size: 45px;
+  font-size: 50px;
   grid-column-start: 2;
   grid-row-start: 1;
   justify-self: end;
 }
 
 span.aside {
-  margin-top: -30px;
+  margin-top: -40px;
   font-size: 14px;
+  color: hsl(184, 14%, 56%);
 }
 
 /* footer disc */
@@ -121,9 +130,9 @@ button.btn {
 
 input[type="number"] {
   background-color: hsl(189, 41%, 97%);
-  width: 390px;
+  width: 400px;
   text-align: right;
-  padding: 10px;
+  padding: 5px;
   font-family: "Space Mono", monospace;
   font-size: 24px;
   border: none;
