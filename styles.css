@@ -52,20 +52,6 @@ div.second-column {
   height: 350px;
 }
 
-/* .error {
-  visibility: hidden;
-}
-
-.hide-error {
-  color: hsl(6, 100%, 63%);
-}
-
-.if-error {
-  outline: 3px;
-  outline-style: solid;
-  outline-color: hsl(6, 100%, 63%);
-} */
-
 /* final results of calculations $0.00*/
 div.tip-amount-num,
 div.total-amount-num {
@@ -128,8 +114,25 @@ button.btn {
   height: 50px;
 }
 
+button.btn:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+
+button.btn:focus {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+button.stay-highlighted {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
 input[type="number"] {
   background-color: hsl(189, 41%, 97%);
+  color: hsl(185, 41%, 84%);
   width: 400px;
   text-align: right;
   padding: 5px;
@@ -150,26 +153,52 @@ input[type="number"].calc-custom {
   padding: 0;
 }
 
+input[type="number"].calc-custom::placeholder {
+  color: hsl(186, 14%, 43%);
+  border-style: solid;
+  border-radius: 4px;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+
 input:focus {
   outline: 3px;
   outline-style: solid;
   outline-color: hsl(172, 67%, 45%);
 }
 
-button.disabledResetBtn {
+button.btn-reset-disabled,
+button.btn-reset-active {
   background-color: hsl(184, 80%, 24%);
   color: hsl(183, 100%, 15%);
   border: solid;
   border-radius: 4px;
   border: none;
   font-family: "Space Mono", monospace;
-  width: 370px;
+  width: 350px;
   height: 45px;
   font-size: 1.2rem;
-  align-self: center;
+  align-self: end;
   justify-self: center;
   pointer-events: none;
 }
+
+/* will be activated when input fields are filled */
+button.btn-reset-active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  pointer-events: auto;
+}
+
+button.btn-reset-active:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+*/
 
 /* the icons within the inputs */
 .bill-item,
@@ -187,6 +216,12 @@ button.disabledResetBtn {
   position: absolute;
   bottom: 17px;
   left: 13px;
+}
+
+::placeholder {
+  /* text-align: center; */
+  font-size: 24px;
+  color: hsl(185, 41%, 84%);
 }
 
 /* # Front-end Style Guide
