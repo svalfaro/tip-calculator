@@ -1,14 +1,49 @@
 let enteredValue = document.querySelector(".calc-num");
 let customPercent = document.querySelector(".calc-custom");
 let totalParty = document.querySelector(".calc-people");
+let resetBtn = document.querySelector(".resetBtn");
 let btnList = document.querySelectorAll(".btn");
+let inputs = document.querySelectorAll(".inp");
 
-let percentage;
-let percent;
-let tip = 0;
-let perPerson;
+function activeCalculator() {
+  resetBtn.classList.add("btn-reset-active");
+  resetBtn.classList.remove("btn-reset-disabled");
+}
 
-// obtain value of button when clicked.
+function disabledCalculator() {
+  resetBtn.classList.remove("btn-reset-active");
+  resetBtn.classList.add("btn-reset-disabled");
+}
+
+// checks if input fields is filled or empty
+inputs.forEach((input) => {
+  input.addEventListener("input", (event) => {
+    const hasValue = Array.from(inputs).some((input) => input.value.length > 0);
+    hasValue ? activeCalculator() : disabledCalculator();
+  });
+});
+
+// resets all input fields
+resetBtn.addEventListener("click", (event) => {
+  inputs.forEach((input) => {
+    input.value = "";
+    disabledCalculator();
+  });
+});
+
+// let totalBill = 0;
+// let totalBtnValue = 0;
+// let totalCustomPercent = 0;
+// let totalPerHeads = 0;
+
+// // obtain value from USER INPUT
+// const amountFunc = () => {
+//   enteredValue.addEventListener("input", () => {
+//     const Number(enteredValue.value);
+//   });
+// };
+
+// obtain value from BUTTONS when clicked.
 btnList.forEach((btn) => {
   btn.addEventListener("click", () => {
     document
@@ -17,6 +52,29 @@ btnList.forEach((btn) => {
     btn.classList.add("stay-highlighted");
   });
 });
+
+// // obtain value from CUSTOM inputs, if available
+// const customPerFunc = () => {
+//   customPercent.addEventListener("input", () => {
+//     return Number(customPercent.value);
+//   });
+// };
+
+// // obtain value from NoP input
+// const partyCountFunc = () => {
+//   totalParty.addEventListener("input", () => {
+//     return Number(totalParty.value);
+//   });
+// };
+
+// totalBill = amountFunc();
+// totalBtnValue = btnFunc();
+// totalCustomPercent = customPerFunc();
+// totalPerHeads = partyCountFunc();
+
+// if (totalBill == "undefined") {
+//   console.log(amountFunc());
+// }
 
 // let calcNum = document.querySelector(".calc-num"); // typed-in amount
 // let calcPeople = document.querySelector(".calc-people");
