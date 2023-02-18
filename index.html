@@ -36,7 +36,7 @@
             <h2>Bill</h2>
             <img src="icon-dollar.svg" alt="dollar symbol"/>
             <input
-              class="calc-num int"
+              class="calc-num inp"
               type="number"
               min="1"
               max="999999"
@@ -49,13 +49,13 @@
           <section class="tip-item">
             <h2>Select Tip %</h2>
             <div class="btn-container">
-              <button class="btn five">5%</button>
-              <button class="btn ten">10%</button>
-              <button class="btn fifteen">15%</button>
-              <button class="btn twentyfive">25%</button>
-              <button class="btn fifty">50%</button>
+              <button class="btn five" value="5">5%</button>
+              <button class="btn ten" value="10">10%</button>
+              <button class="btn fifteen" value="15">15%</button>
+              <button class="btn twentyfive" value="25">25%</button>
+              <button class="btn fifty" value="50">50%</button>
               <input
-                class="calc-custom int"
+                class="calc-custom inp"
                 type="number"
                 min="1"
                 max="199"
@@ -66,11 +66,12 @@
           </section>
 
           <section class="numOfPeople">
-            <h2>Number of People</h2>
+            <h2 class="with-warning">Number of People</h2>
             <!-- <div class="error hide-error">Can't be zero</div> -->
             <img src="icon-person.svg" alt="person symbol" />
+            <span class="warning zero-warning-disabled">Can't be zero</span>
             <input
-              class="calc-people int"
+              class="calc-people inp"
               type="number"
               placeholder="0"
               required
@@ -91,7 +92,7 @@
             <span role="log" class="total-amount-num">$0.00</span>
           </article>
 
-          <button class="btn-reset-active btn-reset-disabled">RESET</button>
+          <button type="button" class="resetBtn btn-reset-disabled">RESET</button>
         </div>
       </div>
     </main>
