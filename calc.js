@@ -2,6 +2,8 @@ let enteredValue = document.querySelector(".calc-num");
 let customPercent = document.querySelector(".calc-custom");
 let totalParty = document.querySelector(".calc-people");
 let resetBtn = document.querySelector(".resetBtn");
+let tipDisplay = document.querySelector(".tip-amount-num");
+let totalDisplay = document.querySelector(".total-amount-num");
 let btnList = document.querySelectorAll(".btn");
 let inputs = document.querySelectorAll(".inp");
 
@@ -15,21 +17,93 @@ function disabledCalculator() {
   resetBtn.classList.add("btn-reset-disabled");
 }
 
-// checks if input fields is filled or empty
+function enableWarning() {
+  document.querySelector(".warning").classList.remove("zero-warning-disabled");
+  document.querySelector(".warning").classList.add("zero-warning-enabled");
+}
+
+function disableWarning() {
+  document.querySelector(".warning").classList.remove("zero-warning-enabled");
+  document.querySelector(".warning").classList.add("zero-warning-disabled");
+}
+
+// obtain value from BUTTONS when clicked.
+btnList.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document
+      .querySelector(".stay-highlighted")
+      ?.classList.remove("stay-highlighted");
+    btn.classList.add("stay-highlighted");
+  });
+});
+
+// checks if input fields is filled or empty, then decides to show `reset`
 inputs.forEach((input) => {
-  input.addEventListener("input", (event) => {
+  input.addEventListener("input", () => {
     const hasValue = Array.from(inputs).some((input) => input.value.length > 0);
     hasValue ? activeCalculator() : disabledCalculator();
   });
 });
 
-// resets all input fields
-resetBtn.addEventListener("click", (event) => {
+// resets all input fields completely
+resetBtn.addEventListener("click", () => {
   inputs.forEach((input) => {
     input.value = "";
+    tipDisplay.innerText = "$0.00";
+    totalDisplay.innerText = "$0.00";
     disabledCalculator();
+    disableWarning();
   });
 });
+
+// to calculate and display end values
+function calculation(enteredValue, totalParty, btnList, customPercent) {
+  let finalTipAmount;
+  let finalTipTotal;
+
+  inputs.forEach((input) => {
+    input.addEventListener("input", (event) => {
+      if (totalParty.value < 1) {
+        if (enteredValue.value > 0 && customPercent.value > 0) {
+          enableWarning();
+        }
+      } else if (totalParty.value > 0) {
+        finalTipAmount =
+          ((enteredValue.value / 100) * customPercent.value) / totalParty.value;
+        finalTipTotal = enteredValue.value / totalParty.value + finalTipAmount;
+        tipDisplay.innerText = `${finalTipAmount}`;
+        totalDisplay.innerText = `${finalTipTotal}`;
+        disableWarning();
+      }
+    });
+  });
+}
+
+calculation(enteredValue, totalParty, btnList, customPercent);
+
+// finalTipAmount =
+// ((bill.value / 100) * customPercent.value) / peopleCount.value;
+// finalTipTotal = bill.value / peopleCount.value + finalTipAmount;
+// tipDisplay.innerText = `${finalTipAmount}`;
+// totalDisplay.innerText = `${finalTipTotal}`;
+
+// btnPercent.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     console.log(peopleCount.value);
+//     finalTipAmount =
+//       ((bill.value / 100) * btn.value) / peopleCount.value;
+//     finalTipTotal = bill.value / peopleCount.value + finalTipAmount;
+//     tipDisplay.innerText = `${finalTipAmount}`;
+//     totalDisplay.innerText = `${finalTipTotal}`;
+//   });
+// });
+
+//   customPercent.addEventListener("input", () => {
+//     console.log(customPercent.value);
+//   });
+// }
+
+// calculation(customPercent);
 
 // let totalBill = 0;
 // let totalBtnValue = 0;
@@ -42,16 +116,6 @@ resetBtn.addEventListener("click", (event) => {
 //     const Number(enteredValue.value);
 //   });
 // };
-
-// obtain value from BUTTONS when clicked.
-btnList.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document
-      .querySelector(".stay-highlighted")
-      ?.classList.remove("stay-highlighted");
-    btn.classList.add("stay-highlighted");
-  });
-});
 
 // // obtain value from CUSTOM inputs, if available
 // const customPerFunc = () => {
