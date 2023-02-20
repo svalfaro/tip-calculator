@@ -94,12 +94,12 @@ function calculation(enteredValue, totalParty, btnList, customPercent) {
           removeHighlight();
         }
       } else if (totalParty.value > 0) {
-        console.log("did this work");
         finalTipAmount =
           ((enteredValue.value / 100) * btn.value) / totalParty.value;
         finalTipTotal = enteredValue.value / totalParty.value + finalTipAmount;
         tipDisplay.innerText = `$${finalTipAmount.toFixed(2)}`;
         totalDisplay.innerText = `$${finalTipTotal.toFixed(2)}`;
+        customPercent.value = "";
         disableWarning();
       }
     });
