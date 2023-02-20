@@ -29,12 +29,16 @@ function disableWarning() {
   totalParty.classList.remove("zero-red");
 }
 
+function removeHighlight() {
+  document
+    .querySelector(".stay-highlighted")
+    ?.classList.remove("stay-highlighted");
+}
+
 // obtain value from BUTTONS when clicked.
 btnList.forEach((btn) => {
   btn.addEventListener("click", () => {
-    document
-      .querySelector(".stay-highlighted")
-      ?.classList.remove("stay-highlighted");
+    removeHighlight();
     btn.classList.add("stay-highlighted");
   });
 });
@@ -55,6 +59,7 @@ resetBtn.addEventListener("click", () => {
     totalDisplay.innerText = "$0.00";
     disabledCalculator();
     disableWarning();
+    removeHighlight();
   });
 });
 
@@ -76,29 +81,27 @@ function calculation(enteredValue, totalParty, btnList, customPercent) {
         tipDisplay.innerText = `$${finalTipAmount.toFixed(2)}`;
         totalDisplay.innerText = `$${finalTipTotal.toFixed(2)}`;
         disableWarning();
+        removeHighlight();
       }
     });
+  });
 
-    btnList.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (totalParty.value < 1) {
-          if (enteredValue.value > 0 && btn.value > 0) {
-            enableWarning();
-            document
-              .querySelector(".stay-highlighted")
-              ?.classList.remove("stay-highlighted");
-          }
-        } else if (totalParty.value > 0) {
-          console.log("did this work");
-          finalTipAmount =
-            ((enteredValue.value / 100) * btn.value) / totalParty.value;
-          finalTipTotal =
-            enteredValue.value / totalParty.value + finalTipAmount;
-          tipDisplay.innerText = `$${finalTipAmount.toFixed(2)}`;
-          totalDisplay.innerText = `$${finalTipTotal.toFixed(2)}`;
-          disableWarning();
+  btnList.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (totalParty.value < 1) {
+        if (enteredValue.value > 0 && btn.value > 0) {
+          enableWarning();
+          removeHighlight();
         }
-      });
+      } else if (totalParty.value > 0) {
+        console.log("did this work");
+        finalTipAmount =
+          ((enteredValue.value / 100) * btn.value) / totalParty.value;
+        finalTipTotal = enteredValue.value / totalParty.value + finalTipAmount;
+        tipDisplay.innerText = `$${finalTipAmount.toFixed(2)}`;
+        totalDisplay.innerText = `$${finalTipTotal.toFixed(2)}`;
+        disableWarning();
+      }
     });
   });
 }
