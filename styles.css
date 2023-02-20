@@ -17,8 +17,20 @@ body {
   }
 }
 
+img.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
 h2 {
   font-size: medium;
+}
+
+h2.with-warning {
+  display: inline;
 }
 
 .main-container {
@@ -34,7 +46,7 @@ h2 {
 
 div.first-column {
   display: grid;
-  row-gap: 20px;
+  row-gap: 45px;
   background-color: hsl(0, 0%, 100%);
   grid-column-start: 1;
   padding: 0px;
@@ -90,6 +102,7 @@ span.aside {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-top: 10px;
 }
 
 .attribution a {
@@ -140,6 +153,7 @@ input[type="number"] {
   font-size: 24px;
   border: none;
   box-shadow: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -164,8 +178,12 @@ input[type="number"].calc-custom::placeholder {
   padding: 0;
 }
 
+input[type="number"].calc-people {
+  margin-top: 7px;
+}
+
 input:focus {
-  outline: 3px;
+  outline: 2px;
   outline-style: solid;
   outline-color: hsl(172, 67%, 45%);
 }
@@ -214,8 +232,12 @@ button.btn-reset-active:hover {
 .bill-item img,
 .numOfPeople img {
   position: absolute;
-  bottom: 17px;
-  left: 13px;
+  bottom: 230px;
+  left: 150px;
+}
+
+.bill-item img {
+  bottom: 560px;
 }
 
 ::placeholder {
@@ -224,37 +246,35 @@ button.btn-reset-active:hover {
   color: hsl(185, 41%, 84%);
 }
 
+.zero-warning-enabled {
+  color: hsl(0, 64%, 65%);
+  visibility: visible;
+  font-size: medium;
+  float: right;
+  display: block;
+}
+
+.zero-warning-disabled {
+  visibility: hidden;
+}
+
+input[type="number"].zero-red {
+  outline-style: solid;
+  outline-color: hsl(0, 64%, 65%);
+}
+
 /* # Front-end Style Guide
-
-## Layout
-
-The designs were created to the following widths:
 
 - Mobile: 375px
 - Desktop: 1440px
 
-## Colors
-
 ### Primary
 
 - Strong cyan: hsl(172, 67%, 45%)
-
-### Neutral
-
 - Very dark cyan: hsl(183, 100%, 15%)
 - Dark grayish cyan: hsl(186, 14%, 43%)
 - Grayish cyan: hsl(184, 14%, 56%)
 - Light grayish cyan: hsl(185, 41%, 84%)
 - Very light grayish cyan: hsl(189, 41%, 97%)
 - White: hsl(0, 0%, 100%)
-
-## Typography
-
-### Body Copy
-
-- Font size (form inputs): 24px
-
-### Font
-
-- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
-- Weights: 700 */
+ */
