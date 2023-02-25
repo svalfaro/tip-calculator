@@ -1,266 +1,538 @@
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: hsl(185, 41%, 84%);
-  font-family: "Space Mono", monospace;
-  font-size: 15px;
-  color: hsl(186, 14%, 43%);
-  /* min-height: 100vh; */
-}
-
-@layer base {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+@media screen and (max-width: 375px) {
+  body {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    background-color: hsl(185, 41%, 84%);
+    font-family: "Space Mono", monospace;
+    font-size: 15px;
+    color: hsl(186, 14%, 43%);
+    /* min-height: 100vh; */
+  }
+
+  @layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  img.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: medium;
+  }
+
+  h2.with-warning {
+    display: inline;
+  }
+
+  .main-container {
+    background-color: hsl(0, 0%, 100%);
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 372px;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 35px;
+    height: 100%;
+  }
+
+  div.first-column {
+    background-color: hsl(0, 0%, 100%);
+    display: grid;
+    grid-row-gap: 30px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    padding: 30px;
+    border-radius: 30px;
+  }
+
+  div.second-column {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 100px);
+    grid-row-start: 2;
+    grid-column-start: 1;
+    margin: 30px;
+    padding: 20px;
+    height: 55%;
+  }
+
+  /* final results tags */
+  article.tip-per-person,
+  article.total-per-person {
+    display: grid;
+    grid-template-columns: 175px 175px;
+    grid-template-rows: 1fr;
+  }
+
+  article h2 {
+    color: hsl(0, 0%, 100%);
+    align-self: center;
+  }
+
+  span.tip-amount-num,
+  span.total-amount-num {
+    color: hsl(172, 67%, 45%);
+    font-size: 35px;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    align-self: center;
+    margin-left: -30px;
+  }
+
+  span.aside {
+    margin-top: -35px;
+    font-size: 14px;
+    color: hsl(184, 14%, 56%);
+  }
+
+  /* footer disc */
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+  .btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  button.btn {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    border: solid;
+    border-radius: 4px;
+    border: none;
+    font-family: "Space Mono", monospace;
+    font-size: 24px;
+    height: 50px;
+  }
+
+  button.btn:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+  }
+
+  button.btn:focus {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+  }
+
+  button.stay-highlighted {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+  }
+
+  input[type="number"] {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    width: 97%;
+    text-align: right;
+    padding: 5px;
+    font-family: "Space Mono", monospace;
+    font-size: 24px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="number"].calc-custom {
+    border-style: solid;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    padding: 0;
+  }
+
+  input[type="number"].calc-custom::placeholder {
+    color: hsl(186, 14%, 43%);
+    border-style: solid;
+    border-radius: 4px;
+    font-size: 24px;
+    text-align: center;
+    border: none;
+    padding: 0;
+  }
+
+  input[type="number"].calc-people {
+    position: relative;
+    margin-top: 7px;
+  }
+
+  input:focus {
+    outline: 2px;
+    outline-style: solid;
+    outline-color: hsl(172, 67%, 45%);
+  }
+
+  button.btn-reset-disabled,
+  button.btn-reset-active {
+    background-color: hsl(184, 80%, 24%);
+    color: hsl(183, 100%, 15%);
+    border: solid;
+    border-radius: 4px;
+    border: none;
+    font-family: "Space Mono", monospace;
+    width: 250px;
+    height: 45px;
+    font-size: 1.2rem;
+    justify-self: center;
+    align-self: center;
+    pointer-events: none;
+  }
+
+  /* will be activated when input fields are filled */
+  button.btn-reset-active {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    pointer-events: auto;
+  }
+
+  button.btn-reset-active:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+  }
+
+  .lol {
+    align-self: center;
+    justify-self: start;
+    margin-left: 13px;
+  }
+
+  /* the icons within the inputs */
+  .bill-item,
+  .numOfPeople {
+    position: relative;
+  }
+
+  .bill-item input,
+  .numOfPeople input {
+    display: block;
+  }
+
+  .bill-item img,
+  .numOfPeople img {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+  }
+
+  .numOfPeople img {
+    top: 47px;
+    z-index: 1;
+  }
+
+  ::placeholder {
+    /* text-align: center; */
+    font-size: 24px;
+    color: hsl(185, 41%, 84%);
+  }
+
+  .zero-warning-enabled {
+    color: hsl(0, 64%, 65%);
+    visibility: visible;
+    font-size: medium;
+    float: right;
+    display: block;
+  }
+
+  .zero-warning-disabled {
+    visibility: hidden;
+  }
+
+  input[type="number"].zero-red {
+    outline-style: solid;
+    outline-color: hsl(0, 64%, 65%);
   }
 }
 
-img.logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 150px;
-  margin-bottom: 100px;
-}
+@media screen and (min-width: 376px) {
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(185, 41%, 84%);
+    font-family: "Space Mono", monospace;
+    font-size: 15px;
+    color: hsl(186, 14%, 43%);
+    /* min-height: 100vh; */
+  }
 
-h2 {
-  font-size: medium;
-}
+  @layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
 
-h2.with-warning {
-  display: inline;
-}
+  img.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    margin-bottom: 100px;
+  }
 
-.main-container {
-  background-color: hsl(0, 0%, 100%);
-  display: grid;
-  margin: 0 auto;
-  place-items: center;
-  grid-template-columns: 1fr 1fr;
-  width: 980px;
-  height: 500px;
-  border-radius: 30px;
-}
+  h2 {
+    font-size: medium;
+  }
 
-div.first-column {
-  display: grid;
-  row-gap: 45px;
-  background-color: hsl(0, 0%, 100%);
-  grid-column-start: 1;
-  padding: 0px;
-}
+  h2.with-warning {
+    display: inline;
+  }
 
-div.second-column {
-  background-color: hsl(183, 100%, 15%);
-  border-radius: 15px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 2fr;
-  grid-column-start: 2;
-  row-gap: 20px;
-  padding: 35px;
-  height: 350px;
-}
+  .main-container {
+    background-color: hsl(0, 0%, 100%);
+    display: grid;
+    margin: 0 auto;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    width: 980px;
+    height: 500px;
+    border-radius: 30px;
+  }
 
-/* final results of calculations $0.00*/
-div.tip-amount-num,
-div.total-amount-num {
-  font-size: 45px;
-  color: hsl(172, 67%, 45%);
-}
+  div.first-column {
+    display: grid;
+    row-gap: 40px;
+    background-color: hsl(0, 0%, 100%);
+    grid-column-start: 1;
+    padding: 0px;
+  }
 
-/* final results tags */
-article.tip-per-person,
-article.total-per-person {
-  display: grid;
-  grid-template-columns: 175px 175px;
-  grid-template-rows: 1fr;
-}
+  div.second-column {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-column-start: 2;
+    row-gap: 40px;
+    padding: 35px;
+    height: 350px;
+  }
 
-article h2 {
-  color: hsl(0, 0%, 100%);
-}
+  /* final results of calculations $0.00 */
+  span.tip-amount-num,
+  span.total-amount-num {
+    color: hsl(172, 67%, 45%);
+    font-size: 50px;
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
 
-span.tip-amount-num,
-span.total-amount-num {
-  color: hsl(172, 67%, 45%);
-  font-size: 50px;
-  grid-column-start: 2;
-  grid-row-start: 1;
-  justify-self: end;
-}
+  /* final results tags */
+  article.tip-per-person,
+  article.total-per-person {
+    display: grid;
+    grid-template-columns: 175px 175px;
+    grid-template-rows: 1fr;
+  }
 
-span.aside {
-  margin-top: -40px;
-  font-size: 14px;
-  color: hsl(184, 14%, 56%);
-}
+  article h2 {
+    color: hsl(0, 0%, 100%);
+  }
 
-/* footer disc */
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 10px;
-}
+  span.aside {
+    font-size: 14px;
+    color: hsl(184, 14%, 56%);
+    justify-self: start;
+    margin-top: -35px;
+  }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
+  /* footer disc */
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+  }
 
-.btn-container {
-  display: grid;
-  grid-template-columns: repeat(3, 125px);
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 15px;
-}
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
 
-button.btn {
-  background-color: hsl(183, 100%, 15%);
-  color: hsl(0, 0%, 100%);
-  border: solid;
-  border-radius: 4px;
-  border: none;
-  font-family: "Space Mono", monospace;
-  font-size: 24px;
-  height: 50px;
-}
+  .btn-container {
+    display: grid;
+    grid-template-columns: repeat(3, 125px);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
+  }
 
-button.btn:hover {
-  background-color: hsl(185, 41%, 84%);
-  color: hsl(183, 100%, 15%);
-  cursor: pointer;
-}
+  button.btn {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    border: solid;
+    border-radius: 4px;
+    border: none;
+    font-family: "Space Mono", monospace;
+    font-size: 24px;
+    height: 50px;
+  }
 
-button.btn:focus {
-  background-color: hsl(172, 67%, 45%);
-  color: hsl(183, 100%, 15%);
-}
+  button.btn:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+  }
 
-button.stay-highlighted {
-  background-color: hsl(172, 67%, 45%);
-  color: hsl(183, 100%, 15%);
-}
+  button.btn:focus {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+  }
 
-input[type="number"] {
-  background-color: hsl(189, 41%, 97%);
-  color: hsl(185, 41%, 84%);
-  width: 400px;
-  text-align: right;
-  padding: 5px;
-  font-family: "Space Mono", monospace;
-  font-size: 24px;
-  border: none;
-  box-shadow: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  button.stay-highlighted {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+  }
 
-input[type="number"].calc-custom {
-  border-style: solid;
-  border-radius: 4px;
-  font-size: 20px;
-  text-align: center;
-  width: 100%;
-  border: none;
-  padding: 0;
-}
+  input[type="number"] {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(185, 41%, 84%);
+    width: 400px;
+    text-align: right;
+    padding: 5px;
+    font-family: "Space Mono", monospace;
+    font-size: 24px;
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-input[type="number"].calc-custom::placeholder {
-  color: hsl(186, 14%, 43%);
-  border-style: solid;
-  border-radius: 4px;
-  font-size: 24px;
-  text-align: center;
-  width: 100%;
-  border: none;
-  padding: 0;
-}
+  input[type="number"].calc-custom {
+    border-style: solid;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
 
-input[type="number"].calc-people {
-  margin-top: 7px;
-}
+  input[type="number"].calc-custom::placeholder {
+    color: hsl(186, 14%, 43%);
+    border-style: solid;
+    border-radius: 4px;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
 
-input:focus {
-  outline: 2px;
-  outline-style: solid;
-  outline-color: hsl(172, 67%, 45%);
-}
+  input[type="number"].calc-people {
+    position: relative;
+    margin-top: 7px;
+  }
 
-button.btn-reset-disabled,
-button.btn-reset-active {
-  background-color: hsl(184, 80%, 24%);
-  color: hsl(183, 100%, 15%);
-  border: solid;
-  border-radius: 4px;
-  border: none;
-  font-family: "Space Mono", monospace;
-  width: 350px;
-  height: 45px;
-  font-size: 1.2rem;
-  align-self: end;
-  justify-self: center;
-  pointer-events: none;
-}
+  input:focus {
+    outline: 2px;
+    outline-style: solid;
+    outline-color: hsl(172, 67%, 45%);
+  }
 
-/* will be activated when input fields are filled */
-button.btn-reset-active {
-  background-color: hsl(172, 67%, 45%);
-  color: hsl(183, 100%, 15%);
-  pointer-events: auto;
-}
+  button.btn-reset-disabled,
+  button.btn-reset-active {
+    background-color: hsl(184, 80%, 24%);
+    color: hsl(183, 100%, 15%);
+    border: solid;
+    border-radius: 4px;
+    border: none;
+    font-family: "Space Mono", monospace;
+    width: 350px;
+    height: 45px;
+    font-size: 1.2rem;
+    /* align-self: end;
+    justify-self: end; */
+    pointer-events: none;
+  }
 
-button.btn-reset-active:hover {
-  background-color: hsl(185, 41%, 84%);
-  color: hsl(183, 100%, 15%);
-  cursor: pointer;
-}
-*/
+  .lol {
+    align-self: end;
+    justify-self: end;
+  }
 
-/* the icons within the inputs */
-.bill-item,
-.numOfPeople {
-  position: relative;
-}
+  /* will be activated when input fields are filled */
+  button.btn-reset-active {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    pointer-events: auto;
+  }
 
-.bill-item input,
-.numOfPeople input {
-  display: block;
-}
+  button.btn-reset-active:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+  }
 
-.bill-item img,
-.numOfPeople img {
-  position: absolute;
-  bottom: 230px;
-  left: 150px;
-}
+  /* the icons within the inputs */
+  .bill-item,
+  .numOfPeople {
+    position: relative;
+  }
 
-.bill-item img {
-  bottom: 560px;
-}
+  .bill-item input,
+  .numOfPeople input {
+    display: block;
+  }
 
-::placeholder {
-  /* text-align: center; */
-  font-size: 24px;
-  color: hsl(185, 41%, 84%);
-}
+  .bill-item img,
+  .numOfPeople img {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+  }
 
-.zero-warning-enabled {
-  color: hsl(0, 64%, 65%);
-  visibility: visible;
-  font-size: medium;
-  float: right;
-  display: block;
-}
+  .numOfPeople img {
+    top: 45px;
+    z-index: 1;
+  }
 
-.zero-warning-disabled {
-  visibility: hidden;
-}
+  ::placeholder {
+    /* text-align: center; */
+    font-size: 24px;
+    color: hsl(185, 41%, 84%);
+  }
 
-input[type="number"].zero-red {
-  outline-style: solid;
-  outline-color: hsl(0, 64%, 65%);
+  .zero-warning-enabled {
+    color: hsl(0, 64%, 65%);
+    visibility: visible;
+    font-size: medium;
+    float: right;
+    display: block;
+  }
+
+  .zero-warning-disabled {
+    visibility: hidden;
+  }
+
+  input[type="number"].zero-red {
+    outline-style: solid;
+    outline-color: hsl(0, 64%, 65%);
+  }
 }
 
 /* # Front-end Style Guide
