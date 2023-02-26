@@ -25,7 +25,7 @@
   <body>
     <header>
       <h1>
-        <a href="#"><img src="logo.svg" alt="website logo" /></a>
+        <a href="#"><img class="logo" src="logo.svg" alt="website logo" /></a>
       </h1>
     </header>
 
@@ -38,8 +38,8 @@
             <input
               class="calc-num inp"
               type="number"
-              min="1"
-              max="999999"
+              min="0.01"
+              max="9999"
               placeholder="0"
               step=".01"
               required
@@ -67,11 +67,12 @@
 
           <section class="numOfPeople">
             <h2 class="with-warning">Number of People</h2>
-            <!-- <div class="error hide-error">Can't be zero</div> -->
             <img src="icon-person.svg" alt="person symbol" />
             <span class="warning zero-warning-disabled">Can't be zero</span>
             <input
               class="calc-people inp"
+              min="1"
+              max="199"
               type="number"
               placeholder="0"
               required
@@ -92,7 +93,9 @@
             <span role="log" class="total-amount-num">$0.00</span>
           </article>
 
-          <button type="button" class="resetBtn btn-reset-disabled">RESET</button>
+          <div class="reset-btn-container">
+            <button type="button" class="resetBtn btn-reset-disabled">RESET</button>
+          </div>
         </div>
       </div>
     </main>
