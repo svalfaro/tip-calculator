@@ -35,6 +35,25 @@ function removeHighlight() {
     ?.classList.remove("stay-highlighted");
 }
 
+function validate(inputID) {
+  const input = inputID;
+  const validityState = input.validity;
+
+  if (validityState.rangeUnderflow) {
+    // input.setCustomValidity("We need a higher number!");
+    input.validationMessage;
+  } else if (validityState.rangeOverflow) {
+    // input.setCustomValidity("Thats too high!");
+    input.validationMessage;
+  } else {
+    input.setCustomValidity("");
+  }
+
+  input.reportValidity();
+  const isValid = input.reportValidity();
+  input.setAttribute("aria-invalid", !isValid);
+}
+
 // obtain value from BUTTONS when clicked.
 btnList.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -45,7 +64,7 @@ btnList.forEach((btn) => {
 
 // checks if input fields is filled or empty, then decides to show `reset`
 inputs.forEach((input) => {
-  input.addEventListener("input", () => {
+  input.addEventListener("input", (event) => {
     const hasValue = Array.from(inputs).some((input) => input.value.length > 0);
     hasValue ? activeCalculator() : disabledCalculator();
   });
@@ -70,6 +89,7 @@ function calculation(enteredValue, totalParty, btnList, customPercent) {
 
   inputs.forEach((input) => {
     input.addEventListener("input", () => {
+      validate(input);
       if (totalParty.value < 1) {
         if (enteredValue.value > 0 && customPercent.value > 0) {
           enableWarning();
