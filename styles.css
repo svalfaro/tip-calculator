@@ -318,7 +318,7 @@ input[type="number"].zero-red {
     display: grid;
     margin: 0 auto;
     place-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(auto, 1fr) 1fr;
     grid-template-rows: 1fr;
     width: 980px;
     height: 500px;
@@ -330,7 +330,9 @@ input[type="number"].zero-red {
     row-gap: 40px;
     background-color: hsl(0, 0%, 100%);
     grid-column-start: 1;
-    padding: 0px;
+    padding: 0px 70px;
+    justify-content: center;
+    align-items: center;
   }
 
   div.second-column {
