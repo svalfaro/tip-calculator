@@ -52,7 +52,7 @@ Users should be able to:
 
 ### **Links**
 
-- [x] Solution URL: [FrontEnd Mentor](https://www.frontendmentor.io/solutions/interactive-rating-card-using-html-css-and-javascript-ybJ-_dwLFs)
+- [x] Solution URL: [FrontEnd Mentor](https://www.frontendmentor.io/solutions/tip-calculator-using-grid-7DGMRNpA-g)
 - [x] Live Site URL: [Netfly](https://tip-calculator-pr.netlify.app/)
 
 ## **My process**
@@ -65,10 +65,9 @@ Users should be able to:
 
 ### **What I learned**
 
-- How to target HTML elements and manipulate via JavaScript.
-- Reading subjects and using them in projects are two different things -- HTMLCollections and NodeLists, for example, were put into practice.
-- addEventListener was a previous hurdle.
+- DOM manipulation.
+- Started with Flexbox. Refactored to gain better grasp of Grid.
 
 ### **Continued development**
 
-- Involve a backend aspect within a project.
+- Aiming to use local storage to access previous calculations.
