@@ -12,18 +12,15 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 
 ---
 
-- [**Tip-Calculator**](#tip-calculator)
-  - [**Solution**](#solution)
-  - [**Table of contents**](#table-of-contents)
-  - [**Overview**](#overview)
-    - [**Author**](#author)
-    - [**The challenge**](#the-challenge)
-    - [**Screenshot**](#screenshot)
-    - [**Links**](#links)
-  - [**My process**](#my-process)
-    - [**Built with**](#built-with)
-    - [**What I learned**](#what-i-learned)
-    - [**Continued development**](#continued-development)
+- [Overview](#overview)
+  - [Author](#author)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
 
 ## **Overview**
 
