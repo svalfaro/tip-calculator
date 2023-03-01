@@ -1,6 +1,6 @@
 body {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: hsl(185, 41%, 84%);
   font-family: "Space Mono", monospace;
@@ -31,6 +31,10 @@ h2 {
 
 h2.with-warning {
   display: inline;
+}
+
+.container {
+  display: grid;
 }
 
 .main-container {
